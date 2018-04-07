@@ -22,6 +22,7 @@ class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
         tableView.dataSource = self
         tableView.isHidden = false
         
+        
     }
 
     @IBAction func addGoalBtnPressed(_ sender: UIButton) {
