@@ -23,9 +23,9 @@ class GoalCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func congfiureCell(description : String , type : String , progress : Int ) {
+    func congfiureCell(description : String , type : GoalType , progress : Int ) {
         goalProgressLbl.text = "\(progress)"
-        goalTypeLbl.text = type
+        goalTypeLbl.text = type.rawValue
         gooalDescriptionLbl.text = description
     }
 
