@@ -25,7 +25,8 @@ class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     }
 
     @IBAction func addGoalBtnPressed(_ sender: UIButton) {
-        
+        guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "createGoalVC") else { return }
+        presentDetail(viewControllerToPresent: createGoalVC)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
