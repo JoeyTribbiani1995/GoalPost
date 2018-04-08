@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
 
