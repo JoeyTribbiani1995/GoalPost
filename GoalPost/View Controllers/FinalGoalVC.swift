@@ -27,7 +27,7 @@ class FinalGoalVC: UIViewController ,UITextFieldDelegate {
         if numberTextField.text != "" {
             self.save { (success) in
                 if success {
-                    
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
@@ -43,7 +43,7 @@ class FinalGoalVC: UIViewController ,UITextFieldDelegate {
         dismissDetail()
     }
     
-    func save(completion : (_ success : Bool) -> ()){
+    func save(completion : @escaping CompletionHandler){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
         
         let goal = Goal(context: managedContext)
@@ -51,7 +51,7 @@ class FinalGoalVC: UIViewController ,UITextFieldDelegate {
         goal.goalType = goalType.rawValue
         goal.goalCompletionValue = Int32(numberTextField.text!)!
         goal.goalProgress = Int32(0)
-        
+       
         do {
             try managedContext.save()
             completion(true)

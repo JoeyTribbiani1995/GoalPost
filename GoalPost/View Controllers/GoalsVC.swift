@@ -15,6 +15,7 @@ class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var goals : [Goal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,26 @@ class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
         tableView.dataSource = self
         tableView.isHidden = false
         
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.fetch { (success) in
+            if success {
+                print("load data")
+                if self.goals.count >= 1 {
+                    self.tableView.isHidden = false
+                    
+                }else {
+                    self.tableView.isHidden = true
+                }
+            }
+        }
+        tableView.reloadData()
     }
 
     @IBAction func addGoalBtnPressed(_ sender: UIButton) {
@@ -36,17 +56,32 @@ class GoalsVC: UIViewController ,UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return goals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalCell {
             
-            cell.congfiureCell(description: "eat a salad twice a week", type: GoalType.longTerm, progress: 2)
+            let goal = goals[indexPath.row]
+            cell.congfiureCell(goal: goal)
             
             return cell
         }else {
             return UITableViewCell()
+        }
+    }
+    
+    func fetch(completion : @escaping CompletionHandler){
+        guard let manageContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        
+        do {
+            goals = try manageContext.fetch(fetchRequest)
+            completion(true)
+        }catch {
+            debugPrint("Could not fetch : ",error.localizedDescription)
+            completion(false)
         }
     }
 

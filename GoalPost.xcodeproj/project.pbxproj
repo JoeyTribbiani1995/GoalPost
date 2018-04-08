@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D73FBD312079CDD200D45679 /* FinalGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FBD302079CDD200D45679 /* FinalGoalVC.swift */; };
+		D73FBD352079E49000D45679 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73FBD342079E49000D45679 /* Constant.swift */; };
 		D7A53ACB207876F70056AC0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A53ACA207876F70056AC0B /* AppDelegate.swift */; };
 		D7A53ACD207876F70056AC0B /* GoalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A53ACC207876F70056AC0B /* GoalsVC.swift */; };
 		D7A53AD0207876F70056AC0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A53ACE207876F70056AC0B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		D73FBD302079CDD200D45679 /* FinalGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGoalVC.swift; sourceTree = "<group>"; };
+		D73FBD342079E49000D45679 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D7A53AC7207876F70056AC0B /* GoalPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A53ACA207876F70056AC0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A53ACC207876F70056AC0B /* GoalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsVC.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		D7A53AE3207877410056AC0B /* Uittiles */ = {
 			isa = PBXGroup;
 			children = (
+				D73FBD342079E49000D45679 /* Constant.swift */,
 			);
 			path = Uittiles;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				D7A53AEF2078A8160056AC0B /* UIViewExt.swift in Sources */,
 				D7A53ACB207876F70056AC0B /* AppDelegate.swift in Sources */,
 				D7A53AED2078A4FB0056AC0B /* UIViewControllerExt.swift in Sources */,
+				D73FBD352079E49000D45679 /* Constant.swift in Sources */,
 				D7A53AF12078B6BA0056AC0B /* UIButtonExt.swift in Sources */,
 				D7A53AD3207876F70056AC0B /* GoalPost.xcdatamodeld in Sources */,
 			);
